@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Klyx Fragrances</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="promo-banner">
+      <div class="container">
+        <div class="promo-banner-content">
+          <span class="promo-text">50% off storewide — curated scents</span>
+          <a class="promo-shop-btn" href="cart.html">Shop now</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="index.html">
+          <img
+            src="images/klyx-logo.png"
+            width="180"
+            height="56"
+            alt="Klyx Fragrances logo: stylized red letter K shaped like a fragrance bottle on charcoal"
+          />
+        </a>
+      </div>
+      <nav class="main-nav site-nav" aria-label="Primary">
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="checkout.html" aria-current="page">Checkout</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="page-wrap">
+        <h1>Checkout</h1>
+        <p class="lead">Review your cart summary, enter shipping details, then use the action buttons below.</p>
+
+        <div class="checkout-layout">
+          <section class="panel" aria-labelledby="summary-heading">
+            <h2 id="summary-heading">Cart summary</h2>
+            <div class="table-wrap">
+              <table>
+                <caption class="sr-only">Summary of items and totals</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th class="numeric" scope="col">Qty</th>
+                    <th class="numeric" scope="col">Line total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bleu de Chanel Parfum</td>
+                    <td class="numeric">1</td>
+                    <td class="numeric">$130.00</td>
+                  </tr>
+                  <tr>
+                    <td>Valentino Born in Roma</td>
+                    <td class="numeric">1</td>
+                    <td class="numeric">$95.00</td>
+                  </tr>
+                  <tr>
+                    <td>Azzaro The Most Wanted</td>
+                    <td class="numeric">2</td>
+                    <td class="numeric">$130.00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th colspan="2" scope="row">Subtotal</th>
+                    <td class="numeric">$355.00</td>
+                  </tr>
+                  <tr>
+                    <th colspan="2" scope="row">Discount</th>
+                    <td class="numeric">&minus; $35.50</td>
+                  </tr>
+                  <tr>
+                    <th colspan="2" scope="row">Tax</th>
+                    <td class="numeric">$31.95</td>
+                  </tr>
+                  <tr>
+                    <th colspan="2" scope="row">Total</th>
+                    <td class="numeric">$351.45</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="ship-heading">
+            <h2 id="ship-heading">Shipping details</h2>
+            <form class="form-grid" action="invoice.html" method="get">
+              <div class="form-grid two">
+                <div>
+                  <label for="ship-name">Full name</label>
+                  <input id="ship-name" name="ship_name" type="text" autocomplete="name" required />
+                </div>
+                <div>
+                  <label for="ship-phone">Phone</label>
+                  <input id="ship-phone" name="ship_phone" type="tel" autocomplete="tel" required />
+                </div>
+              </div>
+              <div>
+                <label for="ship-address">Street address</label>
+                <input id="ship-address" name="ship_address" type="text" autocomplete="street-address" required />
+              </div>
+              <div class="form-grid two">
+                <div>
+                  <label for="ship-city">City</label>
+                  <input id="ship-city" name="ship_city" type="text" autocomplete="address-level2" required />
+                </div>
+                <div>
+                  <label for="ship-postal">Postal / ZIP code</label>
+                  <input id="ship-postal" name="ship_postal" type="text" autocomplete="postal-code" required />
+                </div>
+              </div>
+              <div>
+                <label for="ship-notes">Delivery notes (optional)</label>
+                <textarea id="ship-notes" name="ship_notes" rows="3" placeholder="Fragile glass — ring doorbell, etc."></textarea>
+              </div>
+
+              <div class="button-row" role="group" aria-label="Checkout actions">
+                <button class="btn btn-primary" type="submit" name="action" value="confirm">Confirm</button>
+                <a class="btn btn-secondary" href="cart.html">Cancel</a>
+                <a class="btn btn-danger" href="cart-empty.html">Clear All</a>
+                <a class="btn btn-primary" href="invoice.html">Checkout</a>
+                <a class="btn btn-outline" href="index.html">Close</a>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>&copy; 2026 Klyx Fragrances</p>
+        <p><a href="about.html">About Us</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

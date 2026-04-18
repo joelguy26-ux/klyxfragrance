@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart | Klyx Fragrances</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="promo-banner">
+      <div class="container">
+        <div class="promo-banner-content">
+          <span class="promo-text">50% off storewide — curated scents</span>
+          <a class="promo-shop-btn" href="cart.html">Shop now</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="index.html">
+          <img
+            src="images/klyx-logo.png"
+            width="180"
+            height="56"
+            alt="Klyx Fragrances logo: stylized red letter K shaped like a fragrance bottle on charcoal"
+          />
+        </a>
+      </div>
+      <nav class="main-nav site-nav" aria-label="Primary">
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html" aria-current="page">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="page-wrap">
+        <section class="panel" aria-labelledby="cart-heading">
+          <p class="tagline">Your basket</p>
+          <h1 id="cart-heading">Cart</h1>
+          <p class="lead">Review your items and totals below. Amounts match checkout and your order receipt.</p>
+
+          <!-- Cart: product name, price, qty, subtotal; footer: discount, tax, total -->
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">
+                Line items with pricing, discount, tax, and order total
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Product name</th>
+                  <th class="numeric" scope="col">Price</th>
+                  <th class="numeric" scope="col">Quantity</th>
+                  <th class="numeric" scope="col">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bleu de Chanel Parfum</td>
+                  <td class="numeric">$130.00</td>
+                  <td class="numeric">1</td>
+                  <td class="numeric">$130.00</td>
+                </tr>
+                <tr>
+                  <td>Valentino Born in Roma</td>
+                  <td class="numeric">$95.00</td>
+                  <td class="numeric">1</td>
+                  <td class="numeric">$95.00</td>
+                </tr>
+                <tr>
+                  <td>Azzaro The Most Wanted</td>
+                  <td class="numeric">$65.00</td>
+                  <td class="numeric">2</td>
+                  <td class="numeric">$130.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="3" scope="row">Merchandise subtotal</th>
+                  <td class="numeric">$355.00</td>
+                </tr>
+                <tr>
+                  <th colspan="3" scope="row">Discount</th>
+                  <td class="numeric">&minus; $35.50</td>
+                </tr>
+                <tr>
+                  <th colspan="3" scope="row">Tax (10% after discount)</th>
+                  <td class="numeric">$31.95</td>
+                </tr>
+                <tr>
+                  <th colspan="3" scope="row">Total</th>
+                  <td class="numeric">$351.45</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <p class="field-hint">Welcome offer: 10% off merchandise subtotal. Tax is calculated on the discounted amount.</p>
+
+          <div class="form-actions">
+            <a class="btn btn-primary" href="checkout.html">Checkout</a>
+            <a class="btn btn-outline" href="index.html">Continue shopping</a>
+            <a class="btn btn-danger" href="cart-empty.html">Clear cart</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>&copy; 2026 Klyx Fragrances</p>
+        <p><a href="about.html">About Us</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

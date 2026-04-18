@@ -1,0 +1,784 @@
+/*
+  Klyx Fragrances — UI aligned with KLYXSHOP (dark storefront, Quantico, #f71a1a accents)
+*/
+
+:root {
+  --klyx-bg: #0c0c0d;
+  --klyx-surface: rgba(255, 255, 255, 0.05);
+  --klyx-red: #f71a1a;
+  --klyx-red-hover: #d41414;
+  --klyx-border: rgba(255, 255, 255, 0.1);
+  --klyx-text: #ffffff;
+  --klyx-muted: rgba(255, 255, 255, 0.65);
+  --klyx-faint: rgba(255, 255, 255, 0.4);
+  --font-klyx: "Quantico", system-ui, sans-serif;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-klyx);
+  color: var(--klyx-text);
+  background: var(--klyx-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--klyx-red);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--klyx-red-hover);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- Promo banner (KLYXSHOP) --- */
+.promo-banner {
+  background: var(--klyx-bg);
+  border-bottom: 1px solid var(--klyx-border);
+  padding: 0.75rem 0;
+}
+
+.promo-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.promo-text {
+  color: var(--klyx-text);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .promo-text {
+    font-size: 1rem;
+  }
+}
+
+.promo-shop-btn {
+  display: inline-block;
+  background: var(--klyx-red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.promo-shop-btn:hover {
+  background: var(--klyx-red-hover);
+  color: #fff;
+}
+
+/* --- Header + main nav --- */
+.site-header {
+  background: var(--klyx-bg);
+  border-bottom: 1px solid var(--klyx-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--klyx-text);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.brand:hover {
+  color: var(--klyx-text);
+  opacity: 0.85;
+}
+
+.brand img {
+  height: 48px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .brand img {
+    height: 56px;
+  }
+}
+
+.main-nav {
+  background: var(--klyx-bg);
+  border-bottom: 1px solid var(--klyx-border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-nav .container {
+  padding-bottom: 0;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .site-nav ul {
+    gap: 1.5rem 2rem;
+  }
+}
+
+.site-nav a {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--klyx-text);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--klyx-red);
+  border-color: var(--klyx-red);
+}
+
+main {
+  flex: 1;
+}
+
+.page-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem;
+}
+
+.page-wrap > h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--klyx-text);
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .page-wrap > h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Prose links in panels only — never override .btn text (was forcing red on red primary buttons) */
+.panel a:not(.btn) {
+  color: var(--klyx-red);
+}
+
+.panel a:not(.btn):hover {
+  color: var(--klyx-red-hover);
+}
+
+/* Explicit contrast for link-styled buttons inside panels (belt-and-suspenders) */
+.panel a.btn-primary,
+.panel a.btn-secondary,
+.panel a.btn-danger {
+  color: #fff;
+}
+
+.panel a.btn-primary:hover,
+.panel a.btn-secondary:hover,
+.panel a.btn-danger:hover {
+  color: #fff;
+}
+
+.panel a.btn-outline {
+  color: var(--klyx-text);
+}
+
+.panel a.btn-outline:hover {
+  color: var(--klyx-red);
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.lead {
+  font-size: 1rem;
+  color: var(--klyx-muted);
+  max-width: 60ch;
+}
+
+.lead-centered {
+  margin: -1rem auto 2rem;
+  text-align: center;
+  max-width: 52ch;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--klyx-text);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* --- Panels (forms, cart) --- */
+.panel {
+  background: var(--klyx-surface);
+  border: 1px solid var(--klyx-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.panel + .panel {
+  margin-top: 1.5rem;
+}
+
+.panel h1 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--klyx-text);
+}
+
+/* --- Hero --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.hero-visual {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--klyx-border);
+  background: #1a1a1c;
+}
+
+.hero-visual img {
+  width: 100%;
+  object-fit: contain;
+  aspect-ratio: 1;
+  padding: 1rem;
+}
+
+.hero h1 {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+}
+
+/* --- Product grid (KLYXSHOP cards) --- */
+.product-section {
+  padding: 0 0 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-card {
+  position: relative;
+  background: var(--klyx-surface);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--klyx-border);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease;
+}
+
+.product-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.product-card .product-image-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  background: #2a2a2e;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-card img {
+  position: absolute;
+  inset: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  object-fit: contain;
+}
+
+.product-card .body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.product-card h3 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--klyx-text);
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--klyx-text);
+}
+
+.product-card .body p:not(.price) {
+  font-size: 0.8125rem;
+  color: var(--klyx-muted);
+  margin: 0;
+}
+
+/* --- Newsletter (home) --- */
+.newsletter-section {
+  border-top: 1px solid var(--klyx-border);
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+
+.newsletter-content {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-text {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--klyx-muted);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--klyx-border);
+  background: var(--klyx-surface);
+  color: var(--klyx-text);
+  font-size: 1rem;
+  border-radius: 0;
+  font-family: inherit;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.newsletter-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  border-radius: 0;
+  transition: background 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background: var(--klyx-red);
+}
+
+/* --- Site footer --- */
+.site-footer {
+  background: var(--klyx-bg);
+  border-top: 1px solid var(--klyx-border);
+  padding: 3rem 1rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+  font-size: 0.75rem;
+  color: var(--klyx-faint);
+}
+
+@media (min-width: 768px) {
+  .site-footer p {
+    font-size: 0.875rem;
+  }
+}
+
+.site-footer a {
+  color: var(--klyx-faint);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* --- Forms --- */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid.two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--klyx-muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  border: 1px solid var(--klyx-border);
+  font: inherit;
+  font-size: 1rem;
+  background: var(--klyx-surface);
+  color: var(--klyx-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.field-hint {
+  font-size: 0.8125rem;
+  color: var(--klyx-muted);
+  margin-top: 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0;
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    font-size: 0.875rem;
+  }
+}
+
+.btn-primary {
+  background: var(--klyx-red);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--klyx-red-hover);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #000;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: var(--klyx-red);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--klyx-border);
+  color: var(--klyx-text);
+}
+
+.btn-outline:hover {
+  border-color: var(--klyx-red);
+  color: var(--klyx-red);
+}
+
+.btn-danger {
+  background: #3a1515;
+  color: #fff;
+  border: 1px solid rgba(247, 26, 26, 0.4);
+}
+
+.btn-danger:hover {
+  background: var(--klyx-red);
+  color: #fff;
+}
+
+/* --- Tables --- */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--klyx-border);
+  color: var(--klyx-text);
+}
+
+th {
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+tfoot td,
+tfoot th {
+  font-weight: 700;
+}
+
+.numeric {
+  text-align: right;
+}
+
+/* --- Checkout --- */
+.checkout-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.button-row .btn {
+  flex: 1 1 auto;
+  min-width: 100px;
+}
+
+/* --- About --- */
+.info-list div {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--klyx-border);
+  display: grid;
+  gap: 0.25rem;
+}
+
+@media (min-width: 500px) {
+  .info-list div {
+    grid-template-columns: 10rem 1fr;
+    align-items: baseline;
+  }
+}
+
+.info-list dt {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--klyx-muted);
+}
+
+.info-list dd {
+  margin: 0;
+  color: var(--klyx-text);
+}
+
+/* --- Utilities --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tagline {
+  color: var(--klyx-red);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
