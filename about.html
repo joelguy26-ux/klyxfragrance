@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="about">
     <div class="promo-banner">
       <div class="container">
         <div class="promo-banner-content">
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container header-bar">
-        <a class="brand" href="index.html">
+        <a class="brand" href="home.html">
           <img
             src="images/klyx-logo.png"
             width="180"
@@ -33,11 +33,11 @@
       <nav class="main-nav site-nav" aria-label="Primary">
         <div class="container">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="checkout.html">Checkout</a></li>
             <li><a href="invoice.html">Invoice</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="about.html" aria-current="page">About</a></li>
           </ul>
@@ -117,6 +117,23 @@
                 >Email us</a>
             </p>
           </section>
+
+          <section aria-labelledby="analytics-heading">
+            <h2 id="analytics-heading">Registration analytics (demo)</h2>
+            <p class="field-hint">Counts from <code>localStorage</code> users — gender and age groups at today&rsquo;s date.</p>
+            <div id="user-frequency-charts"></div>
+          </section>
+
+          <section aria-labelledby="inv-report-heading">
+            <h2 id="inv-report-heading">Invoice report</h2>
+            <div class="form-grid" style="margin-top: 0.75rem">
+              <div>
+                <label for="invoice-trn-search">Search by TRN</label>
+                <input id="invoice-trn-search" type="text" placeholder="000-000-000 or partial" autocomplete="off" />
+              </div>
+            </div>
+            <div id="invoices-report" style="margin-top: 1rem"></div>
+          </section>
         </article>
       </div>
     </main>
@@ -124,8 +141,9 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <p>&copy; 2026 Klyx Fragrances. All rights reserved.</p>
-        <p><a href="index.html">Home</a></p>
+        <p><a href="home.html">Home</a></p>
       </div>
     </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

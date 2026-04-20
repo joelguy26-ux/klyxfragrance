@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Klyx Fragrances | Home</title>
+    <title>Login | Klyx Fragrances</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="login">
     <div class="promo-banner">
       <div class="container">
         <div class="promo-banner-content">
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container header-bar">
-        <a class="brand" href="index.html">
+        <a class="brand" href="home.html">
           <img
             src="images/klyx-logo.png"
             width="180"
@@ -33,11 +33,11 @@
       <nav class="main-nav site-nav" aria-label="Primary">
         <div class="container">
           <ul>
-            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="checkout.html">Checkout</a></li>
             <li><a href="invoice.html">Invoice</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html" aria-current="page">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -47,130 +47,58 @@
 
     <main id="main">
       <div class="page-wrap">
-        <section class="hero" aria-labelledby="hero-heading">
-          <div>
-            <p class="tagline">Curated parfums &amp; colognes</p>
-            <h1 id="hero-heading">Luxury in every note.</h1>
-            <p class="lead">
-              Klyx Fragrances brings together designer parfums and colognes for day, evening, and gifting. Discover your
-              next signature scent—then review your bag and complete checkout when you are ready.
-            </p>
-            <p>
-              <a class="btn btn-primary" href="cart.html">View cart</a>
-              <a class="btn btn-outline" href="register.html">Join Klyx</a>
-            </p>
-          </div>
-          <div class="hero-visual">
-            <img
-              src="images/bleu-de-chanel-parfum.jpg"
-              width="600"
-              height="600"
-              alt="Bleu de Chanel Parfum bottle on neutral background"
-            />
-          </div>
-        </section>
+        <section class="panel" aria-labelledby="login-heading">
+          <p class="tagline">Welcome back</p>
+          <h1 id="login-heading">Login</h1>
+          <p class="lead">Sign in with your TRN and password (max 3 attempts per session).</p>
 
-        <section class="product-section" aria-labelledby="feat-heading">
-          <h2 id="feat-heading" class="section-title">House favourites</h2>
-          <p class="lead lead-centered">
-            Hand-picked bottles from houses we trust. Product names and trademarks belong to their respective owners;
-            suggested prices may vary by retailer and region.
-          </p>
-          <div class="product-grid">
-            <article class="product-card">
-              <div class="product-image-wrap">
-                <img src="images/sospiro-vibrato.png" width="400" height="400" alt="Sospiro Vibrato fragrance bottle" />
-              </div>
-              <div class="body">
-                <h3>Sospiro Vibrato</h3>
-                <p class="price">From $198.00</p>
-                <p>Opulent oriental notes; statement evening wear.</p>
-                <a class="btn btn-secondary" href="cart.html">Add to bag</a>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrap">
-                <img src="images/bleu-de-chanel-parfum.jpg" width="400" height="400" alt="Bleu de Chanel Parfum bottle" />
-              </div>
-              <div class="body">
-                <h3>Bleu de Chanel Parfum</h3>
-                <p class="price">From $130.00</p>
-                <p>Woody aromatic profile; polished and versatile.</p>
-                <a class="btn btn-secondary" href="cart.html">Add to bag</a>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrap">
-                <img
-                  src="images/valentino-born-in-roma.jpg"
-                  width="400"
-                  height="400"
-                  alt="Valentino Born in Roma fragrance bottle"
-                />
-              </div>
-              <div class="body">
-                <h3>Valentino Born in Roma</h3>
-                <p class="price">From $95.00</p>
-                <p>Modern foug&egrave;re warmth with urban edge.</p>
-                <a class="btn btn-secondary" href="cart.html">Add to bag</a>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrap">
-                <img
-                  src="images/azzaro-the-most-wanted.jpg"
-                  width="400"
-                  height="400"
-                  alt="Azzaro The Most Wanted cologne bottle"
-                />
-              </div>
-              <div class="body">
-                <h3>Azzaro The Most Wanted</h3>
-                <p class="price">From $65.00</p>
-                <p>Spicy-sweet cardamom and toffee accord.</p>
-                <a class="btn btn-secondary" href="cart.html">Add to bag</a>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrap">
-                <img
-                  src="images/stronger-with-you-intensely.jpg"
-                  width="400"
-                  height="400"
-                  alt="Emporio Armani Stronger With You Intensely bottle"
-                />
-              </div>
-              <div class="body">
-                <h3>Stronger With You Intensely</h3>
-                <p class="price">From $88.00</p>
-                <p>Rich vanilla and smoked chestnut for cooler nights.</p>
-                <a class="btn btn-secondary" href="cart.html">Add to bag</a>
-              </div>
-            </article>
-          </div>
-        </section>
+          <form id="login-form" class="form-grid" action="#" method="get">
+            <div>
+              <label for="login-trn">TRN</label>
+              <input id="login-trn" name="trn" type="text" inputmode="numeric" autocomplete="off" placeholder="000-000-000" required />
+            </div>
+            <div>
+              <label for="login-password">Password</label>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <p id="login-msg" class="field-hint" role="status"></p>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Sign in</button>
+              <a class="btn btn-outline" href="register.html">Need an account?</a>
+            </div>
+          </form>
 
-        <section class="newsletter-section" aria-labelledby="news-heading">
-          <h2 id="news-heading" class="sr-only">Newsletter</h2>
-          <div class="container newsletter-content">
-            <p class="newsletter-text">
-              Be the first to know about our biggest sales. We&rsquo;ll never send more than one email a month.
-            </p>
-            <form class="newsletter-form" action="#" method="get">
-              <label class="sr-only" for="news-email">Email</label>
-              <input id="news-email" class="newsletter-input" type="email" name="email" placeholder="Enter your email" />
-              <button class="newsletter-btn" type="submit">Subscribe</button>
+          <details class="panel-details">
+            <summary>Reset password</summary>
+            <form id="reset-password-form" class="form-grid" action="#" method="get" style="margin-top: 1rem">
+              <div>
+                <label for="reset-trn">TRN</label>
+                <input id="reset-trn" type="text" inputmode="numeric" placeholder="000-000-000" required />
+              </div>
+              <div>
+                <label for="reset-password">New password</label>
+                <input id="reset-password" type="password" autocomplete="new-password" required />
+              </div>
+              <div>
+                <label for="reset-password-confirm">Confirm new password</label>
+                <input id="reset-password-confirm" type="password" autocomplete="new-password" required />
+              </div>
+              <p id="reset-msg" class="field-hint" role="status"></p>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Update password</button>
+              </div>
             </form>
-          </div>
+          </details>
         </section>
       </div>
     </main>
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <p>&copy; 2026 Klyx Fragrances. All rights reserved.</p>
+        <p>&copy; 2026 Klyx Fragrances</p>
         <p><a href="about.html">About Us</a></p>
       </div>
     </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

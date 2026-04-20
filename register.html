@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="register">
     <div class="promo-banner">
       <div class="container">
         <div class="promo-banner-content">
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container header-bar">
-        <a class="brand" href="index.html">
+        <a class="brand" href="home.html">
           <img
             src="images/klyx-logo.png"
             width="180"
@@ -33,11 +33,11 @@
       <nav class="main-nav site-nav" aria-label="Primary">
         <div class="container">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="checkout.html">Checkout</a></li>
             <li><a href="invoice.html">Invoice</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html">Login</a></li>
             <li><a href="register.html" aria-current="page">Register</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -50,37 +50,56 @@
         <section class="panel" aria-labelledby="reg-heading">
           <p class="tagline">Join the list</p>
           <h1 id="reg-heading">Create your account</h1>
-          <p class="lead">All fields are required to create your account.</p>
+          <p class="lead">All fields are required. You must be 18+. TRN format: 000-000-000 (unique).</p>
 
-          <form class="form-grid" action="login.html" method="get">
+          <form id="register-form" class="form-grid" action="#" method="get">
             <div class="form-grid two">
               <div>
-                <label for="full-name">Name</label>
-                <input id="full-name" name="name" type="text" autocomplete="name" required />
+                <label for="reg-first-name">First name</label>
+                <input id="reg-first-name" name="firstName" type="text" autocomplete="given-name" required />
               </div>
               <div>
-                <label for="dob">Date of Birth</label>
-                <input id="dob" name="dob" type="date" required />
+                <label for="reg-last-name">Last name</label>
+                <input id="reg-last-name" name="lastName" type="text" autocomplete="family-name" required />
+              </div>
+            </div>
+            <div class="form-grid two">
+              <div>
+                <label for="reg-dob">Date of birth</label>
+                <input id="reg-dob" name="dob" type="date" required />
+              </div>
+              <div>
+                <label for="reg-gender">Gender</label>
+                <select id="reg-gender" name="gender" required>
+                  <option value="">Select&hellip;</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
               </div>
             </div>
             <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
+              <label for="reg-phone">Phone</label>
+              <input id="reg-phone" name="phone" type="tel" autocomplete="tel" required />
             </div>
-            <div class="form-grid two">
-              <div>
-                <label for="reg-username">Username</label>
-                <input id="reg-username" name="username" type="text" autocomplete="username" required />
-              </div>
-              <div>
-                <label for="reg-password">Password</label>
-                <input id="reg-password" name="password" type="password" autocomplete="new-password" required />
-                <p class="field-hint">Use at least 8 characters, mixing letters and numbers.</p>
-              </div>
+            <div>
+              <label for="reg-email">Email</label>
+              <input id="reg-email" name="email" type="email" autocomplete="email" required />
             </div>
+            <div>
+              <label for="reg-trn">TRN</label>
+              <input id="reg-trn" name="trn" type="text" inputmode="numeric" placeholder="000-000-000" required />
+            </div>
+            <div>
+              <label for="reg-password">Password</label>
+              <input id="reg-password" name="password" type="password" autocomplete="new-password" required />
+              <p class="field-hint">At least 8 characters.</p>
+            </div>
+            <p id="register-msg" class="field-hint" role="status"></p>
             <div class="form-actions">
               <button class="btn btn-primary" type="submit">Register</button>
-              <a class="btn btn-outline" href="login.html">Already registered?</a>
+              <a class="btn btn-outline" href="index.html">Already registered?</a>
             </div>
           </form>
         </section>
@@ -93,5 +112,6 @@
         <p><a href="about.html">About Us</a></p>
       </div>
     </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

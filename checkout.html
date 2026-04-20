@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="checkout">
     <div class="promo-banner">
       <div class="container">
         <div class="promo-banner-content">
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container header-bar">
-        <a class="brand" href="index.html">
+        <a class="brand" href="home.html">
           <img
             src="images/klyx-logo.png"
             width="180"
@@ -33,11 +33,11 @@
       <nav class="main-nav site-nav" aria-label="Primary">
         <div class="container">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="checkout.html" aria-current="page">Checkout</a></li>
             <li><a href="invoice.html">Invoice</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -48,13 +48,13 @@
     <main id="main">
       <div class="page-wrap">
         <h1>Checkout</h1>
-        <p class="lead">Review your cart summary, enter shipping details, then use the action buttons below.</p>
+        <p class="lead">Review your cart summary, enter shipping details, then confirm to generate your invoice.</p>
 
         <div class="checkout-layout">
           <section class="panel" aria-labelledby="summary-heading">
             <h2 id="summary-heading">Cart summary</h2>
             <div class="table-wrap">
-              <table>
+              <table id="checkout-summary-table">
                 <caption class="sr-only">Summary of items and totals</caption>
                 <thead>
                   <tr>
@@ -63,39 +63,23 @@
                     <th class="numeric" scope="col">Line total</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Bleu de Chanel Parfum</td>
-                    <td class="numeric">1</td>
-                    <td class="numeric">$130.00</td>
-                  </tr>
-                  <tr>
-                    <td>Valentino Born in Roma</td>
-                    <td class="numeric">1</td>
-                    <td class="numeric">$95.00</td>
-                  </tr>
-                  <tr>
-                    <td>Azzaro The Most Wanted</td>
-                    <td class="numeric">2</td>
-                    <td class="numeric">$130.00</td>
-                  </tr>
-                </tbody>
+                <tbody></tbody>
                 <tfoot>
                   <tr>
                     <th colspan="2" scope="row">Subtotal</th>
-                    <td class="numeric">$355.00</td>
+                    <td class="numeric" id="checkout-subtotal">$0.00</td>
                   </tr>
                   <tr>
                     <th colspan="2" scope="row">Discount</th>
-                    <td class="numeric">&minus; $35.50</td>
+                    <td class="numeric" id="checkout-discount">&minus; $0.00</td>
                   </tr>
                   <tr>
                     <th colspan="2" scope="row">Tax</th>
-                    <td class="numeric">$31.95</td>
+                    <td class="numeric" id="checkout-tax">$0.00</td>
                   </tr>
                   <tr>
                     <th colspan="2" scope="row">Total</th>
-                    <td class="numeric">$351.45</td>
+                    <td class="numeric" id="checkout-total">$0.00</td>
                   </tr>
                 </tfoot>
               </table>
@@ -104,7 +88,7 @@
 
           <section class="panel" aria-labelledby="ship-heading">
             <h2 id="ship-heading">Shipping details</h2>
-            <form class="form-grid" action="invoice.html" method="get">
+            <form id="checkout-form" class="form-grid" action="#" method="get">
               <div class="form-grid two">
                 <div>
                   <label for="ship-name">Full name</label>
@@ -137,9 +121,8 @@
               <div class="button-row" role="group" aria-label="Checkout actions">
                 <button class="btn btn-primary" type="submit" name="action" value="confirm">Confirm</button>
                 <a class="btn btn-secondary" href="cart.html">Cancel</a>
-                <a class="btn btn-danger" href="cart-empty.html">Clear All</a>
-                <a class="btn btn-primary" href="invoice.html">Checkout</a>
-                <a class="btn btn-outline" href="index.html">Close</a>
+                <a class="btn btn-danger" href="#" id="checkout-clear-all">Clear All</a>
+                <a class="btn btn-outline" href="home.html" id="checkout-close-btn">Close</a>
               </div>
             </form>
           </section>
@@ -153,5 +136,6 @@
         <p><a href="about.html">About Us</a></p>
       </div>
     </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

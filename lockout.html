@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invoice | Klyx Fragrances</title>
+    <title>Account locked | Klyx Fragrances</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body data-page="invoice">
+  <body data-page="lockout">
     <div class="promo-banner">
       <div class="container">
         <div class="promo-banner-content">
@@ -36,7 +36,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="checkout.html">Checkout</a></li>
-            <li><a href="invoice.html" aria-current="page">Invoice</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
             <li><a href="index.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="about.html">About</a></li>
@@ -47,12 +47,16 @@
 
     <main id="main">
       <div class="page-wrap">
-        <section class="panel" aria-labelledby="inv-heading">
-          <div id="invoice-dynamic"></div>
-          <p class="field-hint">Please retain this receipt for your records.</p>
+        <section class="panel" aria-labelledby="lock-heading">
+          <p class="tagline">Security</p>
+          <h1 id="lock-heading">Too many failed attempts</h1>
+          <p class="lead">
+            This browser session has reached the maximum number of login attempts for that TRN. Open a new browser
+            window or use &ldquo;Reset password&rdquo; from the login page after returning.
+          </p>
           <div class="form-actions">
-            <a class="btn btn-primary" href="home.html">Return home</a>
-            <a class="btn btn-outline" href="cart.html">View cart again</a>
+            <a class="btn btn-primary" href="index.html">Back to login</a>
+            <a class="btn btn-outline" href="home.html">Home</a>
           </div>
         </section>
       </div>
@@ -64,6 +68,5 @@
         <p><a href="about.html">About Us</a></p>
       </div>
     </footer>
-    <script src="js/script.js" defer></script>
   </body>
 </html>

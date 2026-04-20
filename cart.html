@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="cart">
     <div class="promo-banner">
       <div class="container">
         <div class="promo-banner-content">
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container header-bar">
-        <a class="brand" href="index.html">
+        <a class="brand" href="home.html">
           <img
             src="images/klyx-logo.png"
             width="180"
@@ -33,11 +33,11 @@
       <nav class="main-nav site-nav" aria-label="Primary">
         <div class="container">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="cart.html" aria-current="page">Cart</a></li>
             <li><a href="checkout.html">Checkout</a></li>
             <li><a href="invoice.html">Invoice</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -47,14 +47,13 @@
 
     <main id="main">
       <div class="page-wrap">
-        <section class="panel" aria-labelledby="cart-heading">
+        <section class="panel" id="cart-panel" aria-labelledby="cart-heading">
           <p class="tagline">Your basket</p>
           <h1 id="cart-heading">Cart</h1>
           <p class="lead">Review your items and totals below. Amounts match checkout and your order receipt.</p>
 
-          <!-- Cart: product name, price, qty, subtotal; footer: discount, tax, total -->
           <div class="table-wrap">
-            <table>
+            <table id="cart-table">
               <caption class="sr-only">
                 Line items with pricing, discount, tax, and order total
               </caption>
@@ -64,44 +63,30 @@
                   <th class="numeric" scope="col">Price</th>
                   <th class="numeric" scope="col">Quantity</th>
                   <th class="numeric" scope="col">Subtotal</th>
+                  <th scope="col">Remove</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Bleu de Chanel Parfum</td>
-                  <td class="numeric">$130.00</td>
-                  <td class="numeric">1</td>
-                  <td class="numeric">$130.00</td>
-                </tr>
-                <tr>
-                  <td>Valentino Born in Roma</td>
-                  <td class="numeric">$95.00</td>
-                  <td class="numeric">1</td>
-                  <td class="numeric">$95.00</td>
-                </tr>
-                <tr>
-                  <td>Azzaro The Most Wanted</td>
-                  <td class="numeric">$65.00</td>
-                  <td class="numeric">2</td>
-                  <td class="numeric">$130.00</td>
-                </tr>
-              </tbody>
+              <tbody></tbody>
               <tfoot>
                 <tr>
                   <th colspan="3" scope="row">Merchandise subtotal</th>
-                  <td class="numeric">$355.00</td>
+                  <td class="numeric" id="cart-subtotal">$0.00</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <th colspan="3" scope="row">Discount</th>
-                  <td class="numeric">&minus; $35.50</td>
+                  <td class="numeric" id="cart-discount">&minus; $0.00</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <th colspan="3" scope="row">Tax (10% after discount)</th>
-                  <td class="numeric">$31.95</td>
+                  <td class="numeric" id="cart-tax">$0.00</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <th colspan="3" scope="row">Total</th>
-                  <td class="numeric">$351.45</td>
+                  <td class="numeric" id="cart-total">$0.00</td>
+                  <td></td>
                 </tr>
               </tfoot>
             </table>
@@ -111,8 +96,8 @@
 
           <div class="form-actions">
             <a class="btn btn-primary" href="checkout.html">Checkout</a>
-            <a class="btn btn-outline" href="index.html">Continue shopping</a>
-            <a class="btn btn-danger" href="cart-empty.html">Clear cart</a>
+            <a class="btn btn-outline" href="home.html">Continue shopping</a>
+            <a class="btn btn-danger" href="cart-empty.html" id="cart-clear-btn">Clear cart</a>
           </div>
         </section>
       </div>
@@ -124,5 +109,6 @@
         <p><a href="about.html">About Us</a></p>
       </div>
     </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
